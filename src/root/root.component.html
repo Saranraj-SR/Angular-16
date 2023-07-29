@@ -1,0 +1,79 @@
+<div
+  class="example-container"
+  [class.example-is-mobile]="mobileQuery.matches"
+  *ngIf="shouldRun.isLoggedIn() || auth.loggedIn()"
+>
+  <mat-toolbar color="primary" class="example-toolbar">
+    <mat-toolbar-row>
+      <!-- <button
+        mat-icon-button
+        (click)="snav.toggle()"
+        class="bg-transparent border-0 text-white mt-2 pb-0"
+      >
+        <mat-icon>menu</mat-icon>
+      </button> -->
+      <h1 class="example-app-name">Angular 16</h1>
+      <span class="example-spacer"></span>
+      <button
+        mat-icon-button
+        class="
+          example-icon
+          bg-transparent
+          border-0
+          d-flex
+          align-items-center
+          justify-content-center
+        "
+        (click)="logout()"
+      >
+        <mat-icon class="text-white">logout</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container
+    class="example-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 96 : 0"
+  >
+    <mat-sidenav
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="96"
+    >
+      <mat-nav-list>
+        <span *ngFor="let item of menu">
+          <mat-list-item
+            [routerLink]="item.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [id]="item.displayName"
+          >
+            <div class="d-flex justify-content-start align-items-center">
+              <mat-icon style="font-size: 20px;">{{ item.iconName }}</mat-icon>
+              <span style="margin-left:10px"
+                >{{ item.displayName }}
+                <span *ngIf="item.route == 'view'" class="badge bg-success">
+                  <!-- {{ auth.totalItems() }} -->
+                </span>
+              </span>
+            </div>
+          </mat-list-item>
+        </span>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="width: 100%; height: auto;">
+        <app-breadcrumb></app-breadcrumb>
+      </div>
+
+      <div style="width: 100%; height: auto;">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<div *ngIf="!shouldRun.isLoggedIn() || !auth.loggedIn()">
+  <router-outlet></router-outlet>
+</div>
