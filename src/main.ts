@@ -7,10 +7,14 @@ import { provideRouter } from '@angular/router';
 import { RootModule } from './root/root.module';
 import { routes } from './root/root-routing.module';
 
-bootstrapApplication(RootComponent, {
-  providers: [
-    // {provide: BACKEND_URL, useValue: 'https://photoapp.looknongmodules.com/api'},
-    provideRouter(routes),
-    importProvidersFrom(RootModule),
-  ],
-});
+bootstrapApplication(
+  RootComponent,
+
+  {
+    providers: [
+      // {provide: BACKEND_URL, useValue: 'https://photoapp.looknongmodules.com/api'},
+      provideRouter(routes),
+      importProvidersFrom(RootModule),
+    ],
+  }
+);
