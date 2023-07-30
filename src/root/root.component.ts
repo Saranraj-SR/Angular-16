@@ -17,33 +17,6 @@ import { RootModule } from './root.module';
 export class RootComponent implements OnInit {
   ngOnInit() {}
 
-  constructor(public auth: AuthService, private router: Router) {
-    console.log(this.auth.loggedIn, 'value');
-    console.log(this.auth.loggedIn(), 'signal');
-  }
+  constructor(private router: Router) {}
   title = 'angular_latest';
-
-  log = false;
-  mobileQuery: any = MediaQueryList;
-  menu: any = [
-    {
-      displayName: 'Dashboard',
-      iconName: 'person',
-      route: '',
-    },
-    {
-      displayName: 'Add / Edit Record',
-      iconName: 'person_add',
-      route: 'add',
-    },
-    {
-      displayName: 'View Record',
-      iconName: 'description',
-      route: 'view',
-    },
-  ];
-  logout() {
-    localStorage.setItem('isLoggedIn', 'false');
-    this.router.navigate(['auth']);
-  }
 }
