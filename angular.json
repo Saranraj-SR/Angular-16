@@ -47,7 +47,8 @@
             "styles": [
               "src/global_styles.css",
               "node_modules/@swimlane/ngx-datatable/themes/material.css",
-              "node_modules/@ng-select/ng-select/themes/material.theme.css"
+              "node_modules/@ng-select/ng-select/themes/material.theme.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "tsConfig": "src/tsconfig.app.json"
           }
