@@ -11,8 +11,18 @@ import { RootModule } from './root.module';
   // providers: [AuthService, HttpClientModule],
 })
 export class RootComponent implements OnInit {
-  ngOnInit() {}
+  ngOnInit() {
+    const button: any = document.querySelector('button');
+    console.log(button, 'eef');
+    if (button != null) {
+      button.addEventListener('click', () => {
+        (<HTMLDivElement>(
+          document.getElementById('customSidebar')
+        )).classList.toggle('collapsedd');
+      });
+    }
+  }
+  title = 'angular_latest';
 
   constructor(private router: Router) {}
-  title = 'angular_latest';
 }

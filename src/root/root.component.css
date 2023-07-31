@@ -1,0 +1,50 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#customSidebar,
+#customContent {
+  height: 100%;
+  overflow: auto;
+  float: left;
+  transition: width 0.35s;
+}
+
+#customSidebar {
+  background: white;
+  width: 30%;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.5);
+}
+
+#customSidebar.collapsedd {
+  width: 0;
+}
+
+#customSidebar.collapsedd + #customContent {
+  width: 100%;
+}
+
+#customContent {
+  background: gray;
+  width: 70%;
+}
+
+/* button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background: black;
+  margin: 20px;
+  cursor: pointer;
+} */
+
+h3 {
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+}
