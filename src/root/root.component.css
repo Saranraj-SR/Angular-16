@@ -14,7 +14,7 @@ body {
 }
 
 #sidebar {
-  background: white;
+  background: black;
   width: 30%;
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.5);
 }
@@ -47,4 +47,46 @@ h3 {
   font-family: sans-serif;
   color: white;
   text-align: center;
+}
+
+#sidebar ul {
+  padding: 0;
+}
+
+#sidebar ul li {
+  list-style-type: none;
+}
+
+#sidebar ul li a {
+  display: block;
+  padding: 13px 30px;
+  border-bottom: 1px solid black;
+  color: rgb(241, 237, 237);
+  font-size: 16px;
+  position: relative;
+  text-decoration: none;
+}
+
+#sidebar ul li a .icon {
+  color: #dee4ec;
+  width: 30px;
+  display: inline-block;
+}
+
+#sidebar ul li a:hover,
+#sidebar ul li a.active {
+  color: black;
+
+  background: white;
+  border-right: 2px solid rgb(5, 68, 104);
+}
+
+#sidebar ul li a:hover .icon,
+#sidebar ul li a.active .icon {
+  color: black;
+}
+
+.sidebar ul li a:hover:before,
+.sidebar ul li a.active:before {
+  display: block;
 }
