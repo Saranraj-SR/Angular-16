@@ -13,6 +13,10 @@ body {
   transition: width 0.35s;
 }
 
+#sidebar header {
+  height: 43px;
+}
+
 #sidebar {
   background: black;
   /* height: calc(100% - 250px); */
