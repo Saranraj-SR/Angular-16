@@ -16,9 +16,9 @@ export class RootComponent implements OnInit {
     console.log(button, 'eef');
     if (button != null) {
       button.addEventListener('click', () => {
-        (<HTMLDivElement>(
-          document.getElementById('customSidebar')
-        )).classList.toggle('collapsedd');
+        (<HTMLDivElement>document.getElementById('sidebar')).classList.toggle(
+          'collapsed'
+        );
       });
     }
   }

@@ -5,30 +5,30 @@ body {
   margin: 0;
 }
 
-#customSidebar,
-#customContent {
+#sidebar,
+#content {
   height: 100%;
   overflow: auto;
   float: left;
   transition: width 0.35s;
 }
 
-#customSidebar {
+#sidebar {
   background: white;
   width: 30%;
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.5);
 }
 
-#customSidebar.collapsedd {
+#sidebar.collapsed {
   width: 0;
 }
 
-#customSidebar.collapsedd + #customContent {
+#sidebar.collapsed + #content {
   width: 100%;
 }
 
-#customContent {
-  background: gray;
+#content {
+  /* background: gray; */
   width: 70%;
 }
 
