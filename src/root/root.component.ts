@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { RootModule } from './root.module';
 import { trigger, state, style } from '@angular/animations';
@@ -54,5 +54,16 @@ export class RootComponent implements OnInit {
 
   toggleMenu() {
     this.settings.sidenavIsOpened = !this.settings.sidenavIsOpened;
+  }
+
+  @HostListener('window:resize')
+  public onWindowResize(): void {
+    if (window.innerWidth <= 768) {
+      this.settings.sidenavIsOpened = false;
+      this.settings.sidenavIsPinned = false;
+    } else {
+      this.settings.sidenavIsOpened = true;
+      this.settings.sidenavIsPinned = true;
+    }
   }
 }
