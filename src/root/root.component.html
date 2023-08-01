@@ -1,9 +1,13 @@
 <!-- <router-outlet></router-outlet> -->
 
 <div style="width: 100%; height: 100vh;">
-  <div id="sidebar" class="collapsed">
+  <div
+    id="sidebar"
+    class="collapsed"
+    [@sidebar]="this.settings.sidenavIsOpened"
+  >
     <header>
-      <h3>header</h3>
+      <h3>{{ title }}</h3>
     </header>
     <ul>
       <li>
@@ -32,9 +36,10 @@
       </li>
     </ul>
   </div>
-  <div id="content">
+  <div id="content" [@content]="this.settings.sidenavIsOpened">
     <nav class="navbar navbar-dark bg-dark">
       <button
+        (click)="toggleMenu()"
         class="bg-transparent border-0"
         type="button"
         data-toggle="collapse"

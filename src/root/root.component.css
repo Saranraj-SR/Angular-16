@@ -14,32 +14,32 @@ body {
 }
 
 #sidebar header {
-  height: 43px;
+  height: 43.35px;
 }
 
 #sidebar {
   background: black;
   /* height: calc(100% - 250px); */
   /* width: 30%; */
-  width: 250px;
+  /* width: 250px; */
   /* box-shadow: 2px 0 4px rgba(0, 0, 0, 0.5); */
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
     0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
 }
 
-#sidebar.collapsed {
+/* #sidebar.collapsed {
   width: 0;
-}
+} */
 
-#sidebar.collapsed + #content {
+/* #sidebar.collapsed + #content {
   width: 100%;
-}
+} */
 
-#content {
-  /* background: gray; */
-  /* width: 70%; */
+/* #content {
+  background: gray;
+  width: 70%;
   width: calc(100% - 250px);
-}
+} */
 
 /* button {
   width: 30px;
@@ -100,4 +100,49 @@ h3 {
 .sidebar ul li a:hover:before,
 .sidebar ul li a.active:before {
   display: block;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 96px;
+  height: 96px;
+  font-size: 0;
+  text-indent: -9999px;
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: 0;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  top: 44px;
+  left: 18px;
+  right: 18px;
+  height: 8px;
+  background: #1a2580;
+}
+
+.hamburger span::before,
+.hamburger span::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #1a2580;
+  content: '';
+}
+
+.hamburger span::before {
+  top: -20px;
+}
+
+.hamburger span::after {
+  bottom: -20px;
 }
