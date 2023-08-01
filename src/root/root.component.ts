@@ -50,6 +50,20 @@ export class RootComponent implements OnInit {
     this.settings = this.appSettings.settings;
     this.title = this.settings.name ?? '';
     this.settings.sidenavIsOpened = false;
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event: any) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName('dropdown-content');
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    };
   }
 
   toggleMenu() {
@@ -65,5 +79,11 @@ export class RootComponent implements OnInit {
       this.settings.sidenavIsOpened = true;
       this.settings.sidenavIsPinned = true;
     }
+  }
+
+  myFunction() {
+    (<HTMLDivElement>document.getElementById('myDropdown')).classList.toggle(
+      'show'
+    );
   }
 }
