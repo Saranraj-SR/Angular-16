@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Route } from '@angular/router';
-import { AuthenticationComponent } from './components/authentication/authentication.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AuthenticationComponent } from './page/authentication/authentication.component';
+import { DashboardComponent } from './page/dashboard/dashboard.component';
+import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 import { AuthGuard } from './shared/services/auth.guard';
 
 export const routes: Route[] = [
   {
     path: '',
     loadComponent: () =>
-      import('./root.component').then((mod) => mod.RootComponent),
+      import('./page/page.component').then((mod) => mod.PageComponent),
     canActivate: [AuthGuard],
     data: { breadcrumb: 'Home' },
     children: [
