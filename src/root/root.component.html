@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="log">
   <nav id="sidebar">
     <div class="logo-name">
       <div class="logo-image">
@@ -10,13 +10,18 @@
 
     <div class="menu-items">
       <ul class="nav-links">
-        <li>
+        <li
+          *ngFor="let menu of menuList"
+          [routerLink]="menu.routerLink"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
           <a href="#">
-            <i class="uil uil-estate"></i>
-            <span class="link-name">Dashboard</span>
+            <i class="uil {{ menu.icon }}"></i>
+            <span class="link-name">{{ menu.title }}</span>
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="#">
             <i class="uil uil-files-landscapes"></i>
             <span class="link-name">Content</span>
@@ -45,7 +50,7 @@
             <i class="uil uil-share"></i>
             <span class="link-name">Share</span>
           </a>
-        </li>
+        </li> -->
       </ul>
 
       <ul class="logout-mode">
@@ -71,4 +76,8 @@
       <img src="images/profile.jpg" alt="" />
     </div>
   </section>
+</div>
+
+<div *ngIf="log">
+  <router-outlet></router-outlet>
 </div>

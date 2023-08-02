@@ -59,7 +59,8 @@ nav .menu-items {
   text-decoration: none;
   position: relative;
 }
-.nav-links li a:hover:before {
+.nav-links li a:hover:before,
+.active a:before {
   content: '';
   position: absolute;
   left: -7px;
@@ -92,8 +93,10 @@ nav.close li a .link-name {
   pointer-events: none;
 }
 .nav-links li a:hover i,
-.nav-links li a:hover .link-name {
-  color: var(--primary-color);
+.nav-links li a:hover .link-name,
+.active i,
+.active .link-name {
+  color: var(--primary-color) !important;
 }
 
 .menu-items .logout-mode {

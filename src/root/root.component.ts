@@ -4,6 +4,8 @@ import { RootModule } from './root.module';
 import { trigger, state, style } from '@angular/animations';
 import { Settings } from './root.settings.model';
 import { AppSettings } from './root.settings';
+import { Menu } from './menu.models';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'root',
@@ -11,40 +13,31 @@ import { AppSettings } from './root.settings';
   styleUrls: ['./root.component.css'],
   standalone: true,
   imports: [RootModule],
-  // animations: [
-  //   trigger('sidebar', [
-  //     state(
-  //       'true',
-  //       style({
-  //         width: '250px',
-  //       })
-  //     ),
-  //     state(
-  //       'false',
-  //       style({
-  //         width: '0',
-  //       })
-  //     ),
-  //   ]),
-  //   trigger('content', [
-  //     state(
-  //       'true',
-  //       style({
-  //         width: 'calc(100% - 250px)',
-  //       })
-  //     ),
-  //     state(
-  //       'false',
-  //       style({
-  //         width: '100%',
-  //       })
-  //     ),
-  //   ]),
-  // ],
 })
 export class RootComponent implements OnInit {
   ngOnInit() {}
   title = '';
+  menuList: any;
+  log: boolean = false;
+
+  constructor(private auth: AuthService) {
+    this.log = this.auth.isLoggedIn();
+    this.menuList = [
+      new Menu(
+        0,
+        'Dashboard',
+        '/dashboard',
+        '',
+        'uil-estate',
+        '',
+        false,
+        0,
+        ''
+      ),
+      new Menu(1, 'Menu2', '', '', 'uil-files-landscapes', '', false, 0, ''),
+      new Menu(2, 'Menu3', '', '', 'uil-chart', '', false, 0, ''),
+    ];
+  }
 
   toogleSidebar() {
     const sidebar = document.getElementById('sidebar');
