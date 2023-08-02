@@ -45,4 +45,9 @@ import { AppSettings } from './root.settings';
 export class RootComponent implements OnInit {
   ngOnInit() {}
   title = '';
+
+  toogleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    (<HTMLElement>sidebar).classList.toggle('close');
+  }
 }
