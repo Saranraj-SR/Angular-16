@@ -12,26 +12,26 @@ nav {
 nav.close {
   width: 73px;
 }
-nav .logo-name {
+/* nav .logo-name {
   display: flex;
   align-items: center;
-}
-nav .logo-image {
+} */
+/* nav .logo-image {
   display: flex;
   justify-content: center;
   min-width: 45px;
-}
-nav .logo-image img {
+} */
+/* nav .logo-image img {
   width: 40px;
   object-fit: cover;
   border-radius: 50%;
-}
+} */
 
 nav .logo-name .logo_name {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
+  transition: all 0.5s ease;
   color: var(--text-color);
-  margin-left: 14px;
   transition: var(--tran-05);
 }
 nav.close .logo_name {
@@ -139,11 +139,11 @@ nav.close ~ .dashboard .top {
   left: 73px;
   width: calc(100% - 73px);
 }
-.dashboard .top .sidebar-toggle {
+/* .dashboard .top .sidebar-toggle {
   font-size: 26px;
   color: var(--text-color);
   cursor: pointer;
-}
+} */
 .dashboard .top .search-box {
   position: relative;
   height: 45px;
@@ -258,4 +258,32 @@ nav.close ~ .dashboard .top {
     left: 0;
     width: 100%;
   }
+}
+
+nav .logo-name {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+nav .logo-image {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+nav .logo-name .sidebar-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+nav .logo-name .sidebar-toggle {
+  text-align: right;
 }
