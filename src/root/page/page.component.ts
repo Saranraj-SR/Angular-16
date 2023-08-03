@@ -51,5 +51,10 @@ export class PageComponent implements OnInit {
     }
   }
 
+  toggleNotification() {
+    let navBar = document.getElementById('dropdown');
+    (<HTMLElement>navBar).classList.toggle('showNotification');
+  }
+
   ngOnInit() {}
 }
