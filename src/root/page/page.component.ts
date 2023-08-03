@@ -10,7 +10,7 @@ import { RootModule } from '../root.module';
   imports: [RootModule],
 })
 export class PageComponent implements OnInit {
-  menuList: any;
+  menuList: Menu[];
   constructor() {
     this.menuList = [
       new Menu(
@@ -39,17 +39,10 @@ export class PageComponent implements OnInit {
     ];
   }
 
-  ngOnInit() {}
-
   toogleSidebar() {
-    let closeBtn = document.getElementById('btn');
-    let sidebar = document.getElementById('side');
-    console.log(closeBtn, sidebar);
-    (<HTMLElement>sidebar).classList.toggle('open');
-    if ((<HTMLElement>sidebar).classList.contains('open')) {
-      (<HTMLElement>closeBtn).classList.replace('bx-menu', 'bx-menu-alt-right'); //replacing the iocns class
-    } else {
-      (<HTMLElement>closeBtn).classList.replace('bx-menu-alt-right', 'bx-menu'); //replacing the iocns class
-    }
+    const sidebar = document.getElementById('sidebar');
+    (<HTMLElement>sidebar).classList.toggle('close');
   }
+
+  ngOnInit() {}
 }
