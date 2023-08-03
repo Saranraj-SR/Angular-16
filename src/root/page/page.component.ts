@@ -40,8 +40,15 @@ export class PageComponent implements OnInit {
   }
 
   toogleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    (<HTMLElement>sidebar).classList.toggle('close');
+    let closeBtn = document.getElementById('btn');
+    let sidebar = document.getElementById('sidebar');
+    console.log(closeBtn, sidebar);
+    (<HTMLElement>sidebar).classList.toggle('open');
+    if ((<HTMLElement>sidebar).classList.contains('open')) {
+      (<HTMLElement>closeBtn).classList.replace('bx-menu', 'bx-menu-alt-right'); //replacing the iocns class
+    } else {
+      (<HTMLElement>closeBtn).classList.replace('bx-menu-alt-right', 'bx-menu'); //replacing the iocns class
+    }
   }
 
   ngOnInit() {}
