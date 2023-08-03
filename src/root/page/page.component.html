@@ -80,30 +80,22 @@
 </div>
 <section class="home-section">
   <!-- <div class="text">Dashboard</div> -->
-
   <nav class="dropdownContainer">
-    <button class="dropdown-toggle" (click)="toggleNotification()">
-      notification
-    </button>
     <!-- <i class="fa fa-exclamation-circle dropdown-toggle"></i>  -->
-    <ul class="dropdown" id="dropdown">
-      <li>
-        <a href="#" style="color: rgba(115, 187, 22, 1)"
-          ><i class="fa fa-circle"></i> Message 1</a
+    <ul id="nav">
+      <li id="notification_li">
+        <span id="notification_count">3</span>
+        <a
+          href="javascript:void(0) "
+          id="notificationLink"
+          (click)="toggleNotification()"
+          >Notifications</a
         >
-      </li>
-      <li>
-        <a href="#" style="color: rgba(115, 187, 22, 1)"
-          ><i class="fa fa-circle"></i> Message 2</a
-        >
-      </li>
-      <li><a href="#">Message 1</a></li>
-      <li><a href="#">More text, More text</a></li>
-      <li><a href="#">Message 3</a></li>
-      <li>
-        <a href="#" style="color: rgba(115, 187, 22, 1)"
-          ><i class="fa fa-list"></i> View All Notifications</a
-        >
+        <div id="notificationContainer">
+          <div id="notificationTitle">Notifications</div>
+          <div id="notificationsBody" class="notifications"></div>
+          <div id="notificationFooter"><a href="#">See All</a></div>
+        </div>
       </li>
     </ul>
   </nav>

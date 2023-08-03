@@ -52,7 +52,7 @@ export class PageComponent implements OnInit {
   }
 
   toggleNotification() {
-    let navBar = document.getElementById('dropdown');
+    let navBar = document.getElementById('notificationContainer');
     (<HTMLElement>navBar).classList.toggle('showNotification');
   }
 
