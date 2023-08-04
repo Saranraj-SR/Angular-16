@@ -7,15 +7,17 @@ import { MaterialModule } from './material.module';
 import { RouterModule } from '@angular/router';
 import { AppSettings } from './root.settings';
 import { SidenavComponent } from './shared/themes/sidenav/sidenav.component';
+import { HorizontalNavComponent } from './shared/themes/horizontal-nav/horizontal-nav.component';
 
 @NgModule({
-  imports: [SidenavComponent],
+  imports: [SidenavComponent, HorizontalNavComponent],
   exports: [
     CommonModule,
     RouterModule,
     HttpClientModule,
     MaterialModule,
     SidenavComponent,
+    HorizontalNavComponent,
   ],
   declarations: [],
   providers: [AuthService, AuthGuard, AppSettings],
