@@ -6,9 +6,17 @@ import { AuthGuard } from './shared/services/auth.guard';
 import { MaterialModule } from './material.module';
 import { RouterModule } from '@angular/router';
 import { AppSettings } from './root.settings';
+import { SidenavComponent } from './shared/themes/sidenav/sidenav.component';
 
 @NgModule({
-  exports: [CommonModule, RouterModule, HttpClientModule, MaterialModule],
+  imports: [SidenavComponent],
+  exports: [
+    CommonModule,
+    RouterModule,
+    HttpClientModule,
+    MaterialModule,
+    SidenavComponent,
+  ],
   declarations: [],
   providers: [AuthService, AuthGuard, AppSettings],
 })

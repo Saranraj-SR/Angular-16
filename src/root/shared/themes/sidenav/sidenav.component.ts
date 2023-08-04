@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Menu } from 'src/root/menu.models';
+import { Menu } from './menu.models';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css'],
+  standalone: true,
 })
 export class SidenavComponent implements OnInit {
   menuList: Menu[];
@@ -35,10 +36,16 @@ export class SidenavComponent implements OnInit {
       new Menu(2, 'Menu3', '/dashboards', '', 'uil-chart', '', false, 0, ''),
     ];
   }
-
   toogleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    (<HTMLElement>sidebar).classList.toggle('close');
+    let closeBtn = document.getElementById('btn');
+    let sidebar = document.getElementById('sidebar');
+    console.log(closeBtn, sidebar);
+    (<HTMLElement>sidebar).classList.toggle('open');
+    if ((<HTMLElement>sidebar).classList.contains('open')) {
+      (<HTMLElement>closeBtn).classList.replace('bx-menu', 'bx-menu-alt-right'); //replacing the iocns class
+    } else {
+      (<HTMLElement>closeBtn).classList.replace('bx-menu-alt-right', 'bx-menu'); //replacing the iocns class
+    }
   }
 
   ngOnInit() {}
