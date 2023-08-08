@@ -39,12 +39,17 @@ export class SidenavComponent implements OnInit {
   toogleSidebar() {
     let closeBtn = document.getElementById('btn');
     let sidebar = document.getElementById('sidebar');
+    let homeSection = document.getElementById('home-content');
     console.log(closeBtn, sidebar);
     (<HTMLElement>sidebar).classList.toggle('open');
     if ((<HTMLElement>sidebar).classList.contains('open')) {
       (<HTMLElement>closeBtn).classList.replace('bx-menu', 'bx-menu-alt-right'); //replacing the iocns class
+      (<HTMLElement>homeSection).style.width = 'calc(100% - 250px)';
+      (<HTMLElement>homeSection).style.left = '250px';
     } else {
       (<HTMLElement>closeBtn).classList.replace('bx-menu-alt-right', 'bx-menu'); //replacing the iocns class
+      (<HTMLElement>homeSection).style.width = 'calc(100% - 70px)';
+      (<HTMLElement>homeSection).style.left = '70px';
     }
   }
 
