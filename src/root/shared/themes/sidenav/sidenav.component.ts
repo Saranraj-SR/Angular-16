@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 import { Menu } from './menu.models';
 
 @Component({
@@ -6,6 +13,7 @@ import { Menu } from './menu.models';
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css'],
   standalone: true,
+  encapsulation: ViewEncapsulation.None,
 })
 export class SidenavComponent implements OnInit {
   menuList: Menu[];

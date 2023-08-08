@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { RootModule } from '../root.module';
 
 @Component({
@@ -7,6 +7,7 @@ import { RootModule } from '../root.module';
   styleUrls: ['./page.component.css'],
   standalone: true,
   imports: [RootModule],
+  // encapsulation: ViewEncapsulation.None,
 })
 export class PageComponent implements OnInit {
   constructor() {}
